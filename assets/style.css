@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+}
+
+.navbar {
+    background: white;
+    padding: 0 32px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-inisial {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--warna-logo);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+.menu-nav {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.menu-nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.menu-nav a:hover {
+    color: var(--warna-logo);
+}
+
+.layout-utama {
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.kolom-kiri,
+.kolom-kanan {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kartu-profil,
+.kartu {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.kartu-profil {
+    padding: 28px 20px;
+    text-align: center;
+}
+
+.foto-profil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--warna-logo);
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    border: 4px solid #e8f0fe;
+}
+
+.nama-profil {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 6px;
+}
+
+.jabatan-profil {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.badge-tersedia {
+    display: inline-block;
+    background: #d4edda;
+    color: #155724;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+.kartu {
+    padding: 22px 20px;
+}
+
+.judul-kartu {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--warna-logo);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e8f0fe;
+}
+
+.item-kontak {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #555;
+}
+
+.ikon-kontak {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: #e8f0fe;
+    color: var(--warna-logo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.teks-kontak {
+    line-height: 1.5;
+}
+
+.item-keahlian {
+    margin-bottom: 13px;
+}
+
+.label-keahlian {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.bar-luar {
+    background: #f0f4f8;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.bar-dalam {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(to right, var(--warna-logo), #4a90d9);
+}
+
+.teks-tentang {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.item-riwayat {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.item-riwayat:last-child {
+    margin-bottom: 0;
+}
+
+.garis-waktu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titik-waktu {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--warna-logo);
+    border: 3px solid #e8f0fe;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.garis-bawah {
+    width: 2px;
+    flex: 1;
+    background: #e8f0fe;
+    margin-top: 4px;
+}
+
+.isi-riwayat {
+    flex: 1;
+    padding-bottom: 4px;
+}
+
+.posisi-riwayat {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 2px;
+}
+
+.tempat-riwayat {
+    font-size: 13px;
+    color: var(--warna-logo);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.periode-riwayat {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 6px;
+}
+
+.desk-riwayat {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 6px;
+}
+
+.badge-riwayat {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: #e8f0fe;
+    color: var(--warna-logo);
+    font-weight: bold;
+}
+
+.grid-proyek {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.kartu-proyek {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 16px;
+    border-left: 4px solid var(--warna-logo);
+}
+
+.nama-proyek {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.teknologi-proyek {
+    font-size: 11px;
+    color: white;
+    background: var(--warna-logo);
+    padding: 2px 8px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.desk-proyek {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.item-organisasi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+}
+
+.item-organisasi:last-child {
+    border-bottom: none;
+}
+
+.posisi-organisasi {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 2px;
+}
+
+.nama-organisasi {
+    color: #666;
+}
+
+.periode-organisasi {
+    font-size: 12px;
+    color: #aaa;
+    white-space: nowrap;
+    margin-left: 16px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .layout-utama {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-proyek {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-nav {
+        display: none;
+    }
+}
