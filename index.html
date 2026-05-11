@@ -1,24 +1,23 @@
-<?php
-require_once __DIR__ . '/config/cv-data.php';
-require_once __DIR__ . '/includes/helpers.php';
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV — <?= e($nama_lengkap) ?></title>
+    <title>CV — Zainal Abidin, S.Kom. (Cand.)</title>
+
     <style>
         :root {
-            --warna-logo: <?= e($warna_logo) ?>;
+            --warna-logo: #003f8a;
         }
     </style>
+
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <nav class="navbar">
-    <div class="logo-inisial"><?= e($inisial_logo) ?></div>
+    <div class="logo-inisial">ZA</div>
+
     <ul class="menu-nav">
         <li><a href="#tentang">Tentang</a></li>
         <li><a href="#pengalaman">Pengalaman</a></li>
@@ -30,111 +29,151 @@ require_once __DIR__ . '/includes/helpers.php';
 
 <div class="layout-utama">
     <div class="kolom-kiri">
-
         <div class="kartu-profil">
-            <div class="foto-profil"><?= e($inisial_logo) ?></div>
-            <div class="nama-profil"><?= e($nama_lengkap) ?></div>
-            <div class="jabatan-profil"><?= e($jabatan) ?></div>
+            <div class="foto-profil">ZA</div>
+            <div class="nama-profil">Zainal Abidin, S.Kom. (Cand.)</div>
+            <div class="jabatan-profil">Mahasiswa S1 Teknik Informatika</div>
             <span class="badge-tersedia">✓ Tersedia</span>
         </div>
 
         <div class="kartu" id="kontak">
             <div class="judul-kartu">Kontak</div>
-            <?= render_contact_item("✉", $email) ?>
-            <?= render_contact_item("☏", $nomor_hp) ?>
-            <?= render_contact_item("⌂", $kota) ?>
-            <?= render_contact_item("in", $linkedin) ?>
-            <?= render_contact_item("GH", $github) ?>
+            <div class="item-kontak">
+                <div class="ikon-kontak">✉</div>
+                <div class="teks-kontak">zainalabidinworkingout@gmail.com</div>
+            </div>
+
+            <div class="item-kontak">
+                <div class="ikon-kontak">☏</div>
+                <div class="teks-kontak">+62 858-5749-8589</div>
+            </div>
+
+            <div class="item-kontak">
+                <div class="ikon-kontak">⌂</div>
+                <div class="teks-kontak">Surabaya, Indonesia</div>
+            </div>
+
+            <div class="item-kontak">
+                <div class="ikon-kontak">in</div>
+                <div class="teks-kontak">linkedin.com/in/Zainal-Abidin</div>
+            </div>
+
+            <div class="item-kontak">
+                <div class="ikon-kontak">GH</div>
+                <div class="teks-kontak">github.com/jeanvonabidenheim</div>
+            </div>
         </div>
 
         <div class="kartu">
-            <div class="judul-kartu">Keahlian</div>
-            <?php foreach ($daftar_keahlian as $keahlian): ?>
-                <?php
-                    $nama_skill = $keahlian[0];
-                    $nilai_skill = $keahlian[1];
-                ?>
-                <div class="item-keahlian">
-                    <div class="label-keahlian">
-                        <span><?= e($nama_skill) ?></span>
-                        <span><?= e($nilai_skill) ?>%</span>
-                    </div>
-                    <div class="bar-luar">
-                        <div class="bar-dalam" style="width: <?= e($nilai_skill) ?>%"></div>
-                    </div>
+            <div class="judul-kartu">Keahlian</div
+            <div class="item-keahlian">
+                <div class="label-keahlian">
+                    <span>HTML</span>
+                    <span>90%</span>
                 </div>
-            <?php endforeach; ?>
-        </div>
+                <div class="bar-luar">
+                    <div class="bar-dalam" style="width:90%"></div>
+                </div>
+            </div>
 
+            <div class="item-keahlian">
+                <div class="label-keahlian">
+                    <span>Python</span>
+                    <span>80%</span>
+                </div>
+                <div class="bar-luar">
+                    <div class="bar-dalam" style="width:80%"></div>
+                </div>
+            </div>
+
+            <div class="item-keahlian">
+                <div class="label-keahlian">
+                    <span>MySQL</span>
+                    <span>70%</span>
+                </div>
+                <div class="bar-luar">
+                    <div class="bar-dalam" style="width:70%"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="kolom-kanan">
-
         <div class="kartu" id="tentang">
             <div class="judul-kartu">Tentang Saya</div>
-            <p class="teks-tentang"><?= nl2br(e($tentang_saya)) ?></p>
+            <p class="teks-tentang">
+                Saya adalah mahasiswa semester 2 yang antusias dalam dunia pemrograman web.
+                Saya suka belajar teknologi baru dan selalu berusaha memberikan hasil terbaik
+                dalam setiap proyek yang saya kerjakan.
+            </p>
         </div>
 
         <div class="kartu" id="pengalaman">
             <div class="judul-kartu">Pengalaman</div>
-            <?php
-            $jumlah_pengalaman = count($daftar_pengalaman);
-            foreach ($daftar_pengalaman as $i => $pengalaman) {
-                echo render_timeline_item(
-                    $pengalaman[0],
-                    $pengalaman[1],
-                    $pengalaman[2],
-                    $pengalaman[3],
-                    $i === $jumlah_pengalaman - 1
-                );
-            }
-            ?>
+            <div class="item-riwayat">
+                <div class="isi-riwayat">
+                    <div class="posisi-riwayat">Electrical Engineer Internship</div>
+                    <div class="tempat-riwayat">Zoom Smart Hotel Management</div>
+                    <div class="periode-riwayat">Nov 2023 – Apr 2024</div>
+                    <div class="desk-riwayat">
+                        Membantu perbaikan dan perawatan fasilitas fisik hotel secara keseluruhan.
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-riwayat">
+                <div class="isi-riwayat">
+                    <div class="posisi-riwayat">CEO</div>
+                    <div class="tempat-riwayat">Jean Affiliate.com.id</div>
+                    <div class="periode-riwayat">Mar 2026 – Sekarang</div>
+                </div>
+            </div>
         </div>
 
         <div class="kartu" id="pendidikan">
             <div class="judul-kartu">Pendidikan</div>
-            <?php
-            $jumlah_pendidikan = count($daftar_pendidikan);
-            foreach ($daftar_pendidikan as $i => $pendidikan) {
-                echo render_timeline_item(
-                    $pendidikan[0],
-                    $pendidikan[1],
-                    $pendidikan[2],
-                    '',
-                    $i === $jumlah_pendidikan - 1,
-                    $pendidikan[3]
-                );
-            }
-            ?>
+            <div class="item-riwayat">
+                <div class="isi-riwayat">
+                    <div class="posisi-riwayat">Universitas Narotama</div>
+                    <div class="tempat-riwayat">S1 Teknik Informatika</div>
+                    <div class="periode-riwayat">2025 – Sekarang</div>
+                </div>
+            </div>
+
+            <div class="item-riwayat">
+                <div class="isi-riwayat">
+                    <div class="posisi-riwayat">SMKS PGRI 4 Surabaya</div>
+                    <div class="tempat-riwayat">Teknik Instalasi Tenaga Listrik</div>
+                    <div class="periode-riwayat">2022 – 2025</div>
+                </div>
+            </div>
         </div>
 
         <div class="kartu" id="proyek">
             <div class="judul-kartu">Proyek</div>
             <div class="grid-proyek">
-                <?php foreach ($daftar_proyek as $proyek): ?>
-                    <?= render_project_card($proyek[0], $proyek[1], $proyek[2]) ?>
-                <?php endforeach; ?>
+                <div class="kartu-proyek">
+                    <div class="nama-proyek">Sistem Absensi Mahasiswa</div>
+                    <div class="teknologi-proyek">PHP, MySQL, HTML</div>
+                    <div class="desk-proyek">
+                        Aplikasi web untuk mencatat kehadiran mahasiswa.
+                    </div>
+                </div>
+
+                <div class="kartu-proyek">
+                    <div class="nama-proyek">Web CV Pribadi</div>
+                    <div class="teknologi-proyek">PHP, HTML, CSS</div>
+                    <div class="desk-proyek">
+                        Website CV profesional yang dapat diupdate dengan mudah.
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="kartu">
-            <div class="judul-kartu">Organisasi</div>
-            <?php foreach ($daftar_organisasi as $organisasi): ?>
-                <div class="item-organisasi">
-                    <div>
-                        <div class="posisi-organisasi"><?= e($organisasi[0]) ?></div>
-                        <div class="nama-organisasi"><?= e($organisasi[1]) ?></div>
-                    </div>
-                    <div class="periode-organisasi"><?= e($organisasi[2]) ?></div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-
     </div>
 </div>
 
 <div class="footer">
-    © <?= date("Y") ?> <?= e($nama_lengkap) ?> — Dibuat dengan PHP & HTML
+    © 2026 Zainal Abidin — Dibuat dengan HTML & CSS
 </div>
 
 </body>
